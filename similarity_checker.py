@@ -5,6 +5,12 @@ class SimilarityChecker:
             return 60
         if self.is_longer_than_twice_length(str_a, str_b):
             return 0
+        if len(str_a)>len(str_b):
+            gap = len(str_a) - len(str_b)
+            return (1-gap/len(str_b))*60
+        else:
+            gap = len(str_b) - len(str_a)
+            return (1-gap/len(str_a))*60
 
 
     def is_longer_than_twice_length(self, str_a, str_b):
