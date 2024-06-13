@@ -18,3 +18,6 @@ class TestChecker(TestCase):
 
     def test_similarity_of_same_input_length(self):
         self.assertEqual(60, self.checker.check_similarity("asdaf", "asdee"))
+
+    def test_similarity_of_longer_than_twice_length(self):
+        self.assertEqual(0, self.checker.check_similarity("aaf", "a112sdee"))
