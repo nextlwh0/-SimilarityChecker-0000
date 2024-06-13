@@ -8,3 +8,8 @@ class TestChcker(TestCase):
         self.checker = SimilarityChecker()
         with self.assertRaises(TypeError):
             self.checker.check_similarity()
+
+    def test_exception_when_input_length_is_zero(self):
+        self.checker = SimilarityChecker()
+        with self.assertRaises(TypeError):
+            self.checker.check_similarity("", "")
