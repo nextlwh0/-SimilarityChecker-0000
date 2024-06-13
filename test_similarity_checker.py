@@ -16,3 +16,5 @@ class TestChecker(TestCase):
         with self.assertRaises(TypeError):
             self.checker.check_similarity("", "")
 
+    def test_similarity_of_same_input_length(self):
+        self.assertEqual(60, self.checker.check_similarity("asdaf", "asdee"))
