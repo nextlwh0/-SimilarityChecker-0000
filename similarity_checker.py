@@ -14,7 +14,7 @@ class SimilarityChecker:
 
 
     def is_longer_than_twice_length(self, str_a, str_b):
-        return len(str_a) <= len(str_b) or len(str_a) >= len(str_b)
+        return 2*len(str_a) <= len(str_b) or len(str_a) >= 2*len(str_b)
 
     def is_same_length(self, str_a, str_b):
         return len(str_a) == len(str_b)
