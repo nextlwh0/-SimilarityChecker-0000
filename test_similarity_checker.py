@@ -8,6 +8,9 @@ class TestChecker(TestCase):
         self.checker = SimilarityChecker()
         super().setUp()
 
+    def assert_score(self, str_a, str_b):
+        self.assertEqual(60, self.checker.check_similarity(str_a, str_b))
+
     def test_exception_when_input_is_none(self):
         with self.assertRaises(TypeError):
             self.checker.check_similarity()
@@ -17,7 +20,8 @@ class TestChecker(TestCase):
             self.checker.check_similarity("", "")
 
     def test_similarity_of_same_input_length(self):
-        self.assertEqual(60, self.checker.check_similarity("asdaf", "asdee"))
+        self.assert_score("asdaf", "asdee")
+
 
     def test_similarity_of_longer_than_twice_length(self):
         self.assertEqual(0, self.checker.check_similarity("aaf", "a112sdee"))
